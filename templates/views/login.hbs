@@ -7,25 +7,124 @@
     <title>Login Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #F3EBF6;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .main {
+            background-color: #FFFFEF;
+            width: 500px;
+            height: 400px;
+            margin: 7em auto;
+            border-radius: 1.5em;
+            box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        }
+
+        .sign {
+            padding-top: 40px;
+            color: #8C55AA;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        .first {
+            width: 76%;
+            color: rgb(38, 50, 56);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            background: rgba(136, 126, 126, 0.04);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            box-sizing: border-box;
+            border: 2px solid rgba(0, 0, 0, 0.02);
+            margin-bottom: 50px;
+            margin-left: 46px;
+            text-align: center;
+            margin-bottom: 27px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        form.form1 {
+            padding-top: 40px;
+        }
+
+        .second {
+            width: 76%;
+            color: rgb(38, 50, 56);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            background: rgba(136, 126, 126, 0.04);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            box-sizing: border-box;
+            border: 2px solid rgba(0, 0, 0, 0.02);
+            margin-bottom: 50px;
+            margin-left: 46px;
+            text-align: center;
+            margin-bottom: 27px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+
+        .frist:focus,
+        .second:focus {
+            border: 2px solid rgba(0, 0, 0, 0.18);
+
+        }
+
+        .submit {
+            cursor: pointer;
+            border-radius: 5em;
+            color: #fff;
+            background: linear-gradient(to right, #9C27B0, #E040FB);
+            border: 0;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            font-family: 'Ubuntu', sans-serif;
+            margin-left: 35%;
+            font-size: 13px;
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+        }
+
+        .forgot {
+            text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+            color: #c335db;
+            padding-top: 15px;
+        }
+
+        a {
+            text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+            color: #757575;
+            text-decoration: none;
+        }
+    </style>
+
 </head>
 
 <body>
-    {{>nav}}
-    <div class="container">
-        <form action="" method="POST">
-            <div class="form-group">
-                <label for="email">Email or Phone No.</label>
-                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailhelp"
-                    placeholder="Enter your email or Phone No.">
-                <small id="emailhelp" class="form-text text-muted">abc123@example.com</small>
-            </div>
-            <div class="form-group">
-                <label for="pass">Password</label>
-                <input type="password" class="form-control" name="pass" id="pass" placeholder="Enter your password">
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+
+    <div class="main">
+        <p class="sign" align="center">Sign in</p>
+        <form class="form1" method="POST">
+            <input class="first " type="text" align="center" placeholder="Email or Phone No." name="email" id="email">
+            <input class="second" type="password" align="center" placeholder="Password" name="pass" id="pass">
+            <button type="submit" class="submit" align="center">Login</button>
+            <p class="forgot" align="center"><a href="">Forgot Password?</a></p>
         </form>
     </div>
+
     <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

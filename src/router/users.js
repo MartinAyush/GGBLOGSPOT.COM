@@ -69,7 +69,6 @@ router.post('/login', async (req, res) => {
     }
 })
 
-
 router.get('*', (req, res) => {
     res.render('404')
 })
