@@ -11,9 +11,70 @@
 
 <body>
     {{>nav}}
-    <h1 class="text-center">This is user page</h1>
-    <h2>Welcome {{name}}</h2>
-    <h3>this is auth token:- {{token}}</h3>
+    <div class="container">
+
+        <a href="login">
+            <p class="text-right">Logout</p>
+        </a>
+
+        <h2 class="text-center my-4 text-uppercase" style="text-decoration: underline;">Welcome {{name}}</h2>
+        <h3 class="text-capitalize">Your Blogs:-</h3>
+        <div class="my-5">
+            <h1 class="text-center text-capitalize" style="text-decoration: underline;">APPLEApple is coming back with
+                yet another digital event on November 10</h1>
+            <p class="lead text-right">by Martin Ayush | November 2, 2020</p>
+            <p class="text-monospace" style="font-size: 18px;">Look, we get it. You’re tired of Apple events, we’re
+                tired of Apple events, but that isn’t stopping the company from coming with its third digital event this
+                year. The first two events brought around new Apple Watches, a new HomePod mini, and of course, new
+                iPhones.
+
+                Now, the company is back with another event scheduled for November 10. As usual, you’ll be able to watch
+                the event from both the Apple website and (most likely) through YouTube.
+
+                This event is using the iconic Apple phrase “One more thing,” but doesn’t allude to anything to expect
+                during the event. But through past news and leaks, we do have some ideas as to what will be included
+                during the event.
+            </p>
+
+            <button class="btn btn-primary">Edit blog</button>
+            <button class="btn btn-danger">Delete Blog</button>
+
+            <hr>
+        </div>
+
+        <div class="my-5">
+            <h1 class="text-center text-capitalize" style="text-decoration: underline;">GOOGLEGoogle One subscribers now
+                have access to a free VPN on both mobile and desktop</h1>
+            <p class="lead text-right">by Martin Ayush | November 2, 2020</p>
+            <p class="text-monospace" style="font-size: 18px;">Surfing the web via your WiFi internet connection is one
+                thing. But surfing the web via a public WiFi network is entirely another matter. The thing is, public
+                WiFi networks are significantly more vulnerable than private ones. That makes your personal information
+                at risk of hacker attacks.
+
+                People aware of that always use a VPN service to protect their data from being stolen by hackers. A VPN
+                service acts as a shield against hackers when surfing the web on unsecured networks such as public WiFi.
+                It does that by hiding your IP address and stopping malicious parties from tracking your location. That
+                way, you can securely browse, download, and stream via an encrypted connection.
+
+                Recently, Google announced on its blog that they now offer free VPN protection to all Google One premium
+                subscribers (2TB and higher plans) as added security for Android phones. With just one tap, users will
+                be able to activate their Google VPN, which is built into their Gooogle One app, and their data will be
+                safe from malicious attacks from hackers. When enabled, the service covers the phone’s internet traffic,
+                regardless of which app or browser you might be using.
+
+                This service is currently available only to premium Google One subscribers in the US. However, they plan
+                to expand to other countries, as well as Windows, Mac, and iOS.
+
+                In the announcement, they also introduced “Pro Sessions by Google One with VPN support.” Anyone that
+                uses that service will get one-on-one counseling from a Google expert and learn how to stay protected
+                online.
+            </p>
+            <button class="btn btn-primary">Edit blog</button>
+            <button class="btn btn-danger">Delete Blog</button>
+            <hr>
+        </div>
+    </div>
+
     <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
