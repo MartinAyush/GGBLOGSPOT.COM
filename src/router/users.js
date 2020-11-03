@@ -69,8 +69,13 @@ router.post('/login', async (req, res) => {
     }
 })
 
-router.get('*', (req, res) => {
-    res.render('404')
+router.get('/addblog', (req, res) => {
+    res.render('addBlog')
 })
+
+router.get('/showblog', (req, res) => {
+    res.render('showBlog')
+})
+
 
 module.exports = router

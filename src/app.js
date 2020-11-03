@@ -7,6 +7,7 @@ const hbs = require('hbs')
 const path = require('path')
 require('../db/db-connection')
 const userRouter = require('./router/users')
+const blogRouter = require('./router/blog')
 
 const partialsPath = path.join(__dirname, '../templates/partials')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -18,10 +19,11 @@ app.use(express.urlencoded({ extended: false }))
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
+app.use(blogRouter)
 app.use(userRouter)
 
-const port = process.env.PORT
+// app.get('*', (req, res) => {
+//     res.render('404')
+// })
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`)
-})
+module.exports = app
