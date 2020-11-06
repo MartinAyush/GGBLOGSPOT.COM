@@ -8,7 +8,7 @@ const bcrypt = require('bcryptjs')
 const router = new express.Router()
 const auth = require('../middleware/auth')
 
-router.get('', (req, res) => {
+router.get('/', (req, res) => {
     res.render('index')
 })
 
@@ -68,14 +68,5 @@ router.post('/login', async (req, res) => {
         console.log('Error occured', e)
     }
 })
-
-router.get('/addblog', (req, res) => {
-    res.render('addBlog')
-})
-
-router.get('/showblog', (req, res) => {
-    res.render('showBlog')
-})
-
 
 module.exports = router
