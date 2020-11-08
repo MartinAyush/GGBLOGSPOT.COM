@@ -4,6 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const express = require('express')
 const User = require('../models/User')
+const Blog = require('../models/blog')
 const bcrypt = require('bcryptjs')
 const router = new express.Router()
 const auth = require('../middleware/auth')
@@ -59,9 +60,10 @@ router.post('/login', async (req, res) => {
         }
 
         await user.generateAuthToken()
-
+        const blogs = await Blog.find({})
         res.render('user', {
-            name: user.firstName
+            name: user.firstName,
+            blogs
         })
 
     } catch (e) {

@@ -2,8 +2,6 @@ const express = require('express')
 const router = new express.Router()
 const Blog = require('../models/blog')
 const multer = require('multer')
-const sharp = require('sharp')
-const moment = require('moment')
 
 const upload = multer({
     limits: {
@@ -16,23 +14,18 @@ router.get('/addblog', (req, res) => {
 })
 
 router.post('/addblog', upload.single('image'), async (req, res) => {
-    const times = new Date().getTime()
-    const time = moment(times).format('MMMM D,YYYY || h:m a')
-    const buffer = await sharp(req.file.buffer).png().toBuffer()
-
     const blog = new Blog({
         title: req.body.title,
         description: req.body.description,
         category: req.body.category,
-        image: buffer,
-        time: time
+        image: req.file.buffer
     })
 
     try {
         await blog.save()
-        res.send("saved Sucessfully")
+        res.send('<h1>Blog is Sucessfully saved!</h1>')
     } catch (error) {
-        res.send(error)
+        res.send(error.message)
     }
 })
 
@@ -41,6 +34,16 @@ router.get('/', async (req, res) => {
     res.render('index', {
         blogs
     })
+})
+router.get('/showblog', async (req, res) => {
+    const blogs = await Blog.find({})
+    res.render('index', {
+        blogs
+    })
+})
+
+router.get('/updateblog', (req, res) => {
+    res.render('updateBlog')
 })
 
 module.exports = router
