@@ -9,10 +9,6 @@ const bcrypt = require('bcryptjs')
 const router = new express.Router()
 const auth = require('../middleware/auth')
 
-router.get('/', (req, res) => {
-    res.render('index')
-})
-
 router.get('/signup', (req, res) => {
     res.render('signup')
 })

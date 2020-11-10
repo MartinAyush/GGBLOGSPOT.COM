@@ -29,27 +29,30 @@
     <h1 class="text-center text " style="text-decoration: underline;"><i>Update Your Blog<i></h1>
     <div class="container">
         <form method="POST" enctype="multipart/form-data">
+
             <div class="form-group">
                 <label for="title" class="first"><i>Add Title</i></label>
                 <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId"
-                    placeholder="Enter Title for the Blog" required>
+                    placeholder="Enter Title for the Blog" value="{{blog.title}}">
             </div>
 
             <div class="form-group">
                 <label for="description" class="first"><i>Add Description</i></label>
-                <textarea class="form-control" name="description" id="description" rows="10" required></textarea>
+                <textarea class="form-control" name="description" id="description"
+                    rows="10">{{blog.description}}</textarea>
             </div>
 
             <div class="form-group">
-                <label for="image" class="first">Add Image</label>
+                <img src="{{blog.imagesrc}}" class="img-fluid">
+                <label for="image" class="first">Update Image</label>
                 <br>
-                <input type="file" name="image" id="image" accept="image/*" required>
+                <input type="file" name="image" id="image" accept="image/*">
             </div>
 
             <div class="form-group">
                 <label for="category" class="first"><i>Add Category</i></label>
                 <input type="text" class="form-control" name="category" id="category" aria-describedby="helpId"
-                    placeholder="Enter Title for the Blog" required>
+                    value="{{blog.category}}">
             </div>
 
             <button type="submit" class="btn btn-success"><i>Update</i></button>

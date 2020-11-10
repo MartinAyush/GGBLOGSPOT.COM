@@ -12,18 +12,33 @@
 <body>
     {{>nav}}
     <div class="container">
-        <a href="login">
-            <p class="text-right">Logout</p>
-        </a>
-        <h2 class="text-center text-danger" style="text-decoration: underline; text-transform: uppercase;">Welcome
-            {{name}}</h2>
+        <div class="text-right">
+            <a href="/">Logout</a>
+        </div>
+        <div>
+            <h1 class="text-center" style="text-decoration: underline; text-transform: capitalize;">Welcome {{name}}
+            </h1>
+        </div>
+        <div>
+            <a href="/blogs/add" class="btn btn-primary">Add a blog</a>
+        </div>
+
         {{#each blogs}}
         <div class="my-3">
-            <h2 class="text-center text-capitalize" style="text-decoration: underline;">{{this.title}}</h2>
+            <h2 class="text-center text-capitalize" style="text-decoration: underline;"><a
+                    href="/blogs/{{this._id}}">{{this.title}}</a></h2>
             <p class="lead text-right">{{this.time}}</p>
             <p class="lead text-left">Category:- {{this.category}}</p>
-            <img src="data:image/png;base64,{{this.imagesrc}}" alt="Blog image" class="img-fluid">
+            <img src="{{this.imagesrc}}" alt="Blog image" class="img-fluid">
             <p class="text-monospace my-3" style="font-size: 18px;">{{this.description}}</p>
+        </div>
+        <div style="display: inline-block;">
+            <a href="/blogs/update/{{this._id}}" class="btn btn-primary">Update</a>
+        </div>
+        <div style="display: inline-block;">
+            <form action="/blog/delete/{{this._id}}" method="POST">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
         </div>
         {{/each}}
     </div>
